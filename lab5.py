@@ -26,6 +26,7 @@ def sir(n):
         a,b = b,a+b
 sir(55)
 
+
 def afiseaza_55():
     return 5*11
 print(afiseaza_55())
