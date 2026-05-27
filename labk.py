@@ -110,26 +110,25 @@ knn.fit(x_train, y_train)
 #ex7,a
 import matplotlib.pyplot as plt
 
-#  2 caracteristici:
-# petal length (index 2)
-# petal width (index 3)
-
 plt.figure(figsize=(8,6))
 
 scatter = plt.scatter(
-    x[:, 2],  # lungime petală
-    x[:, 3],  # lățime petală
-    c=y,
+    x[:, 2],   # petal length
+    x[:, 3],   # petal width
+    c=y
 )
 
 plt.xlabel("Petal Length")
 plt.ylabel("Petal Width")
 plt.title("Distribuția florilor Iris")
 
-plt.legend(
-    handles=scatter.legend_elements()[0],
-    labels=iris.target_names
+# legendă corectă
+legend1 = plt.legend(
+    *scatter.legend_elements(),
+    title="Clase"
 )
+
+plt.gca().add_artist(legend1)
 
 plt.show()
 #b
